@@ -29,3 +29,65 @@ describe('Large Array Convertion', function() {
     })
 
 });
+
+describe('Object Heaps', function() {
+
+    describe('Validate Min Heap', function() {
+
+        it('Should return person with lowest age', function() {
+            var minHeap = BinaryHeap.createMinHeap(function(a) {
+                return a.age;
+            });
+            var John = {
+                name: "John",
+                age: 13
+            };
+            var Carl = {
+                name: "Carl",
+                age: 45
+            };
+            var Sarah = {
+                name: "Sarah",
+                age: 19
+            };
+            var Nathalie = {
+                name: "Nathalie",
+                age: 28
+            };
+
+            minHeap.arrayToHeap([John, Carl, Sarah, Nathalie]);
+
+            assert.equal(John, minHeap.peek());
+        })
+    })
+
+    describe('Validate Max Heap', function() {
+
+        it('Should return person with highest age', function() {
+            var maxHeap = BinaryHeap.createMaxHeap(function(a) {
+                return a.age;
+            });
+            var John = {
+                name: "John",
+                age: 13
+            };
+            var Carl = {
+                name: "Carl",
+                age: 45
+            };
+            var Sarah = {
+                name: "Sarah",
+                age: 19
+            };
+            var Nathalie = {
+                name: "Nathalie",
+                age: 28
+            };
+
+            maxHeap.arrayToHeap([John, Carl, Sarah, Nathalie]);
+
+            assert.equal(Carl, maxHeap.peek());
+        })
+    })
+
+});

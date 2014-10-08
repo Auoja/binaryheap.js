@@ -1,17 +1,20 @@
 (function(exports) {
 
-    var comparisons = {
-        "maxheap": function(a, b) {
-            return a >= b;
-        },
-        "minheap": function(a, b) {
-            return a <= b;
-        }
-    };
-
-    function BinaryHeap(type) {
+    function BinaryHeap(type, value) {
         var tree = [];
+        var getValue = value || function(a) {
+            return a;
+        };
+        var comparisons = {
+            "maxheap": function(a, b) {
+                return getValue(a) >= getValue(b);
+            },
+            "minheap": function(a, b) {
+                return getValue(a) <= getValue(b)
+            }
+        };
         var comparison = comparisons[type];
+
 
         // Private
 
@@ -99,19 +102,19 @@
         };
 
         this.arrayToHeap = function(arr) {
-            for ( var i = arr.length - 1; i >= 0; i--) {
+            for (var i = arr.length - 1; i >= 0; i--) {
                 this.push(arr[i]);
             }
         };
 
     };
 
-    exports.createMaxHeap = function() {
-        return new BinaryHeap("maxheap");
+    exports.createMaxHeap = function(value) {
+        return new BinaryHeap("maxheap", value);
     };
 
-    exports.createMinHeap = function() {
-        return new BinaryHeap("minheap");
+    exports.createMinHeap = function(value) {
+        return new BinaryHeap("minheap", value);
     };
 
 })(typeof exports === 'undefined' ? this['BinaryHeap'] = {} : exports);
