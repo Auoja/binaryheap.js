@@ -12,7 +12,7 @@ Basic usage with integers.
 	maxHeap.arrayToHeap([103, 12, 78, 93, 14]);
 	maxHeap.push(18);
 	
-	var maxValue = maxHeap.pop();
+	var maxValue = maxHeap.pop(); // 12
 ```
 
 Basic usage with more complex objects. Note that `.createMinHeap()` takes a value extraction function as an argument.
