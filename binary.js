@@ -80,6 +80,10 @@
             return tree[0];
         };
 
+        this.peekValue = function() {
+            return getValue(tree[0]);
+        };
+
         this.size = function() {
             return tree.length;
         };
