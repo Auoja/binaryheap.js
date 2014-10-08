@@ -1,10 +1,10 @@
 (function(exports) {
 
     var comparisons = {
-        "maxheap": function (a, b) {
+        "maxheap": function(a, b) {
             return a >= b;
         },
-        "minheap": function (a, b) {
+        "minheap": function(a, b) {
             return a <= b;
         }
     };
@@ -32,7 +32,40 @@
         };
 
         var downHeap = function(i) {
-            // TODO
+
+            var node = tree[i];
+            var length = tree.length;
+
+            while (true) {
+
+                var leftChildInd = 2 * i + 1;
+                var rightChildInd = 2 * i + 2;
+
+                var swapNodeInd = null;
+
+                if (leftChildInd < length) {
+                    var leftChild = tree[leftChildInd];
+                    if (comparison(leftChild, node)) {
+                        swapNodeInd = leftChildInd;
+                    }
+                }
+
+                if (rightChildInd < length) {
+                    var rightChild = tree[rightChildInd];
+
+                    if (comparison(rightChild, (swapNodeInd === null ? node : leftChild))) {
+                        swapNodeInd = rightChildInd;
+                    }
+                }
+
+                if (swapNodeInd) {
+                    tree[i] = tree[swapNodeInd];
+                    tree[swapNodeInd] = node;
+                    i = swapNodeInd;
+                } else {
+                    break;
+                }
+            }
         };
 
         // Public
@@ -54,6 +87,7 @@
             upHeap(tree.length - 1);
         };
 
+
         this.pop = function() {
             var result = tree[0];
             var end = tree.pop();
@@ -67,11 +101,11 @@
 
     };
 
-    exports.createMaxHeap = function () {
+    exports.createMaxHeap = function() {
         return new BinaryHeap("maxheap");
     };
 
-    exports.createMinHeap = function () {
+    exports.createMinHeap = function() {
         return new BinaryHeap("minheap");
     };
 
