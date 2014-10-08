@@ -6,11 +6,11 @@
             return a;
         };
         var comparisons = {
-            "maxheap": function(a, b) {
+            'maxheap': function(a, b) {
                 return getValue(a) >= getValue(b);
             },
-            "minheap": function(a, b) {
-                return getValue(a) <= getValue(b)
+            'minheap': function(a, b) {
+                return getValue(a) <= getValue(b);
             }
         };
         var comparison = comparisons[type];
@@ -40,22 +40,21 @@
             var length = tree.length;
 
             while (true) {
-
                 var leftChildInd = 2 * i + 1;
                 var rightChildInd = 2 * i + 2;
-
+                var leftChild;
+                var rightChild;
                 var swapNodeInd = null;
 
                 if (leftChildInd < length) {
-                    var leftChild = tree[leftChildInd];
+                    leftChild = tree[leftChildInd];
                     if (comparison(leftChild, node)) {
                         swapNodeInd = leftChildInd;
                     }
                 }
 
                 if (rightChildInd < length) {
-                    var rightChild = tree[rightChildInd];
-
+                    rightChild = tree[rightChildInd];
                     if (comparison(rightChild, (swapNodeInd === null ? node : leftChild))) {
                         swapNodeInd = rightChildInd;
                     }
@@ -107,14 +106,14 @@
             }
         };
 
-    };
+    }
 
     exports.createMaxHeap = function(value) {
-        return new BinaryHeap("maxheap", value);
+        return new BinaryHeap('maxheap', value);
     };
 
     exports.createMinHeap = function(value) {
-        return new BinaryHeap("minheap", value);
+        return new BinaryHeap('minheap', value);
     };
 
 })(typeof exports === 'undefined' ? this['BinaryHeap'] = {} : exports);
