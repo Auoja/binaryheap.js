@@ -1,0 +1,17 @@
+{
+    "name": "BinaryHeap.js",
+    "version": "0.0.1",
+    "description": "JavaScript Binary Heap implementation",
+    "main": "binary.js",
+    "devDependencies": {
+        "mocha": "^1.21.4"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha"
+    },
+    "author": "Anton Auoja <antonauoja@gmail.com>",
+    "readmeFilename": "README.md",
+    "engines": {
+        "node": "0.10.31"
+    }
+}
