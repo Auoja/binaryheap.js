@@ -2,7 +2,7 @@
     "name": "BinaryHeap.js",
     "version": "0.0.1",
     "description": "JavaScript Binary Heap implementation",
-    "main": "binary.js",
+    "main": "binaryheap.js",
     "devDependencies": {
         "mocha": "^1.21.4"
     },
