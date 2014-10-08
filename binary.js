@@ -87,7 +87,6 @@
             upHeap(tree.length - 1);
         };
 
-
         this.pop = function() {
             var result = tree[0];
             var end = tree.pop();
@@ -97,6 +96,12 @@
                 downHeap(0);
             }
             return result;
+        };
+
+        this.arrayToHeap = function(arr) {
+            for ( var i = arr.length - 1; i >= 0; i--) {
+                this.push(arr[i]);
+            }
         };
 
     };
