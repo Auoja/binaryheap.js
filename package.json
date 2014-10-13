@@ -10,6 +10,10 @@
         "test": "./node_modules/.bin/mocha"
     },
     "author": "Anton Auoja <antonauoja@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Auoja/binaryheap.js.git"
+    },
     "readmeFilename": "README.md",
     "engines": {
         "node": "0.10.31"
