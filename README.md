@@ -12,7 +12,7 @@ Basic usage with integers.
 	maxHeap.arrayToHeap([103, 12, 78, 93, 14]);
 	maxHeap.push(18);
 	
-	var maxValue = maxHeap.pop(); // 12
+	var maxValue = maxHeap.pop(); // 103
 ```
 
 Basic usage with more complex objects. Note that `.createMinHeap()` takes a value extraction function as an argument.
@@ -52,18 +52,15 @@ Install `mocha` either globaly or locally by running:
 
 ```
 	node install
-	
 ```
 
 Then just run:
 
 ```
 	node test
-	
 ```
 or:
 
 ```
 	node test/test.js
-	
 ```
