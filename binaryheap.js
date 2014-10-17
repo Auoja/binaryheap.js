@@ -89,8 +89,14 @@
         };
 
         this.push = function(node) {
-            tree.push(node);
-            upHeap(tree.length - 1);
+            if (node instanceof Array) {
+                for (var i = 0; i < node.length; i++) {
+                    this.push(node[i]);
+                }
+            } else {
+                tree.push(node);
+                upHeap(tree.length - 1);
+            }
         };
 
         this.pop = function() {
@@ -102,12 +108,6 @@
                 downHeap(0);
             }
             return result;
-        };
-
-        this.arrayToHeap = function(arr) {
-            for (var i = arr.length - 1; i >= 0; i--) {
-                this.push(arr[i]);
-            }
         };
 
     }

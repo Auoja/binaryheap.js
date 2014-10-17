@@ -9,7 +9,7 @@ describe('Large Array Convertion', function() {
 
         it('Should return 1000 if array is the same size as heap', function() {
             var maxHeap = BinaryHeap.createMaxHeap();
-            maxHeap.arrayToHeap(largeTestArray);
+            maxHeap.push(largeTestArray);
 
             assert.equal(largeTestArray.length, maxHeap.size());
         });
@@ -20,7 +20,7 @@ describe('Large Array Convertion', function() {
 
         it('Should return 1000 if array is the same size as heap', function() {
             var minHeap = BinaryHeap.createMinHeap();
-            minHeap.arrayToHeap(largeTestArray);
+            minHeap.push(largeTestArray);
 
             assert.equal(largeTestArray.length, minHeap.size());
         });
@@ -53,7 +53,7 @@ describe('Object Heaps', function() {
             age: 28
         };
 
-        minHeap.arrayToHeap([John, Carl, Sarah, Nathalie]);
+        minHeap.push([John, Carl, Sarah, Nathalie]);
 
         it('Should return person with highest age', function() {
             assert.equal(John, minHeap.peek());
@@ -86,7 +86,7 @@ describe('Object Heaps', function() {
             age: 28
         };
 
-        maxHeap.arrayToHeap([John, Carl, Sarah, Nathalie]);
+        maxHeap.push([John, Carl, Sarah, Nathalie]);
 
         it('Should return person with highest age', function() {
             assert.equal(Carl, maxHeap.peek());
